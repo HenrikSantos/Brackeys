@@ -1,9 +1,16 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    void OnCollisionEnter()
+    public PlayerMovement movement;
+
+
+    void OnCollisionEnter(Collision collisionInfo)
     {
-        Debug.Log("Nós batemos em algo");
+        if (collisionInfo.collider.tag == "Obstaculo")
+        {
+            movement.enabled = false;
+        }
     }
 }

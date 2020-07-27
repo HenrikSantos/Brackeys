@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float ForcaFrente = 1000f;
     public float ForcaLados = 500f;
     public float ForcaPulo = 100f;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("a"))
         {
-            Player.AddForce(-ForcaLados * Time.deltaTime, 0, 0);
+            Player.AddForce(-ForcaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
         if (Input.GetKey("d"))
         {
-            Player.AddForce(ForcaLados * Time.deltaTime, 0, 0);
+            Player.AddForce(ForcaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
-        if (Input.GetKey("space"))
-        {
-            Player.AddForce(0, ForcaLados * Time.deltaTime, 0);
-        }
+
+        
     }
 }
