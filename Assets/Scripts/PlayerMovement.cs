@@ -28,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Player.AddForce(ForcaLados * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
-
+        if (Player.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
         
     }
 }
