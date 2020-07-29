@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float ForcaFrente = 1000f;
     public float ForcaLados = 500f;
-    public float ForcaPulo = 100f;
 
     
 
